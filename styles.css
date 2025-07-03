@@ -655,7 +655,7 @@ select,
   height: fit-content;
   border-radius: 24px;
   position: sticky;
-  top: 455px;
+  top: 353px;
   width: 280px;
   z-index: 999;
 }
@@ -876,7 +876,6 @@ select,
 
   .scroll-to-top-container {
     width: 220px !important;
-    top: 85% !important;
   }
 
   .games-grid {
