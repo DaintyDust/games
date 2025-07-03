@@ -1,5 +1,90 @@
-<html>
-  <body>
-    <h1>Games</h1>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games Collection</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="main-container">
+    <div class="floating-elements">
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1 class="title">Games Collection</h1>
+            <p class="subtitle">Enjoy these amazing HTML5 games</p>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search games...">
+                <div class="search-icon">🔍</div>
+            </div>
+        </div>
+
+         <div class="main-content">
+            <div class="filters-sidebar">
+                <h3 class="filters-title">Filters</h3>
+                
+                <div class="filter-group">
+                    <label for="genreFilter">Genre:</label>
+                    <select id="genreFilter" class="filter-select">
+                        <option value="">All Genres</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="companyFilter">Company:</label>
+                    <select id="companyFilter" class="filter-select">
+                        <option value="">All Companies</option>
+                    </select>
+                </div>
+                
+                <!-- <div class="filter-group">
+                    <label for="typeFilter">Type:</label>
+                    <select id="typeFilter" class="filter-select">
+                        <option value="">All Types</option>
+                        <option value="HTML5">HTML5</option>
+                        <option value="Flash">Flash</option>
+                        <option value="Unity">Unity</option>
+                    </select>
+                </div> -->
+                
+                <button class="clear-filters-btn" onclick="clearFilters()">Clear Filters</button>
+            </div>
+            
+            <!-- Scroll to Top Button -->
+            <div class="scroll-to-top-container">
+                <button class="scroll-to-top-btn" id="scrollToTop" onclick="scrollToTop()">
+                    <span class="scroll-icon">↑</span>
+                    <span class="scroll-text">Back to Top</span>
+                </button>
+            </div>
+            
+            <div class="games-content">
+                <div class="games-grid">
+                </div>
+
+                <div class="load-more">
+                    <button class="load-more-btn" onclick="loadMoreGames()">Load More Games</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="gameModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Game</h3>
+                <button class="close-button" onclick="closeModal()">&times;</button>
+            </div>
+            <iframe class="modal-iframe" id="modalIframe" src=""></iframe>
+        </div>
+    </div>
+    </main>
+</body>
 </html>
