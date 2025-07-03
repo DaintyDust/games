@@ -69,7 +69,7 @@ function loadFallbackGames() {
 
 function openGame(title, url) {
     document.getElementById("modalTitle").textContent = title;
-    document.getElementById("modalIframe").src = url;
+    document.getElementById("modalIframe").src = url + "?gd_sdk_referrer_url=" + encodeURIComponent("https://spel.nl");
     document.getElementById("gameModal").style.display = "block";
     document.body.style.overflow = "hidden";
 }
