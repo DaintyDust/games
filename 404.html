@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error 404 - Page Not Found | Games Collection</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Override specific styles for 404 page */
+      .main-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 20px;
+      }
+
+      .error-container {
+        max-width: 800px;
+        width: inherit;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 24px;
+        padding: 50px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .error-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      }
+
+      .error-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: white;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        margin-bottom: 20px;
+        letter-spacing: -0.02em;
+      }
+
+      .error-code {
+        font-size: 6rem;
+        font-weight: 900;
+        background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin: 20px 0;
+        text-shadow: 0 4px 20px rgba(255, 107, 107, 0.3);
+      }
+
+      .error-message {
+        font-size: 1.3rem;
+        color: rgba(255, 255, 255, 0.8);
+        font-weight: 400;
+        margin-bottom: 30px;
+        line-height: 1.6;
+      }
+
+      .error-description {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 40px;
+        line-height: 1.5;
+      }
+
+      .back-button {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: white;
+        padding: 15px 30px;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        outline: none;
+        margin: 0 10px;
+      }
+
+      .back-button:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .back-button:focus {
+        background: rgba(255, 255, 255, 0.35);
+        border-color: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2), 0 12px 35px rgba(0, 0, 0, 0.2);
+        transform: translateY(-1px);
+      }
+
+      .button-group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 30px;
+      }
+
+      .floating-elements {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .floating-circle {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+        animation: float 20s infinite ease-in-out;
+      }
+
+      .floating-circle:nth-child(1) {
+        width: 100px;
+        height: 100px;
+        top: 10%;
+        left: 10%;
+        animation-delay: 0s;
+      }
+
+      .floating-circle:nth-child(2) {
+        width: 150px;
+        height: 150px;
+        top: 60%;
+        right: 10%;
+        animation-delay: -7s;
+      }
+
+      .floating-circle:nth-child(3) {
+        width: 80px;
+        height: 80px;
+        bottom: 20%;
+        left: 20%;
+        animation-delay: -14s;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 0.3;
+        }
+        50% {
+          transform: translateY(-20px) rotate(180deg);
+          opacity: 0.6;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .error-container {
+          padding: 40px 25px;
+          margin: 20px;
+          max-width: 90%;
+        }
+
+        .error-title {
+          font-size: 2.2rem;
+        }
+
+        .error-code {
+          font-size: 4rem;
+        }
+
+        .error-message {
+          font-size: 1.1rem;
+        }
+
+        .button-group {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .back-button {
+          width: 100%;
+          max-width: 200px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="floating-elements">
+      <div class="floating-circle"></div>
+      <div class="floating-circle"></div>
+      <div class="floating-circle"></div>
+    </div>
+
+    <main class="main-container">
+      <div class="error-container">
+        <h1 class="error-title">Oops!</h1>
+        <div class="error-code">404</div>
+        <p class="error-message">Page Not Found</p>
+        <p class="error-description">The page you are looking for could not be found.</p>
+
+        <div class="button-group">
+          <button class="back-button" onclick="goBack()">← Go Back</button>
+          <button class="back-button" onclick="goHome()">Home</button>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      function goBack() {
+        if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          goHome();
+        }
+      }
+
+      function goHome() {
+        window.location.href = "/";
+      }
+    </script>
+  </body>
+</html>
